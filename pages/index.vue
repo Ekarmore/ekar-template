@@ -11,6 +11,7 @@
     <div class="one">
       TEST
     </div>
+    <test />
   </div>
 </template>
 
