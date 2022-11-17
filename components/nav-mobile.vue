@@ -68,6 +68,7 @@ const touchMove = (event: any) => {
             <div class="special-line">-</div>
             <NuxtLink active-class="text-black" :to="navItem.to">{{ navItem.content }}</NuxtLink>
           </span>
+          <span class="navTEST">TEST</span>
           <footer class="text-center text-xs text-gray-500 absolute bottom-5 font-mono">
             Design and create by <a href="">Ekar</a> in 2022
           </footer>
@@ -78,6 +79,9 @@ const touchMove = (event: any) => {
 </template>
 
 <style>
+.navTEST{
+@apply text-4xl text-blue-900
+}
 /* when modal close,nav-icon */
 .openL1{
 @apply h-0.5 bg-black w-full  absolute transform rotate-45 top-2 ease-in-out duration-500 !important;
