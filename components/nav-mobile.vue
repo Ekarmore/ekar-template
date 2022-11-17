@@ -84,22 +84,22 @@ const touchMove = (event: any) => {
 }
 /* when modal close,nav-icon */
 .openL1{
-@apply h-0.5 bg-black w-full  absolute transform rotate-45 top-2 ease-in-out duration-500 !important;
+--at-apply: h-0.5 bg-black w-full  absolute transform rotate-45 top-2 ease-in-out duration-500 !important;
 }
 .openL2{
-@apply h-0.5 bg-black w-full  top-2  absolute translate-x-2 opacity-0 ease-in-out duration-300
+--at-apply: h-0.5 bg-black w-full  top-2  absolute translate-x-2 opacity-0 ease-in-out duration-300
 }
 .openL3{
-@apply h-0.5 bg-black w-full  absolute transform  -rotate-45 top-2 ease-in-out duration-500 !important;
+--at-apply: h-0.5 bg-black w-full  absolute transform  -rotate-45 top-2 ease-in-out duration-500 !important;
 }
 /* when modal open,nav-icon */
 .closeL1{
-@apply h-0.5 bg-black w-full  absolute transform rotate-0 top-0 ease-in-out duration-500 !important;
+--at-apply: h-0.5 bg-black w-full  absolute transform rotate-0 top-0 ease-in-out duration-500 !important;
 }
 .closeL2{
-@apply h-0.5 bg-black w-full  absolute top-2 translate-x-0 opacity-100 ease-in-out duration-300 delay-200
+--at-apply: h-0.5 bg-black w-full  absolute top-2 translate-x-0 opacity-100 ease-in-out duration-300 delay-200
 }
 .closeL3{
-@apply h-0.5 bg-black w-full  absolute transform rotate-0 top-4 ease-in-out duration-500 !important;
+--at-apply: h-0.5 bg-black w-full  absolute transform rotate-0 top-4 ease-in-out duration-500 !important;
 }
 </style>
