@@ -1,23 +1,28 @@
 <script setup>
-import { ref } from 'vue'
 import { gsap } from 'gsap'
 import scrollTrigger from 'gsap/ScrollTrigger'
-import { useXScroll } from '~/composables/scrollControl'
 gsap.registerPlugin(scrollTrigger)
 // col wheel
 const { TransverseWrapper, wheel } = useXScroll()
 const compl = () => {
-  console.log('触发')
+  window.console.log('触发')
 }
 onMounted(() => {
-  gsap.from('.pic2', {
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: '.pic2 ',
+      scroller: '#HContainer',
+      horizontal: true,
+      trigger: '.pic',
+      start: 'left 50%',
       markers: true,
     },
     scale: 0.3,
     onComplete: compl,
   })
+  tl.addLabel('.pic')
+    .from('.pic', { opacity: 0, translateY: -15 })
+  tl.addLabel('.pic2')
+    .from('.pic2', { opacity: 0, translateY: -15 })
 })
 
 const newVh = ref('100vh')
@@ -30,9 +35,9 @@ onMounted(() => {
   <div>
     <!-- <section v-show="a && a1 && a2 && a3"> -->
     <section :style="{ height: newVh }">
-      <div ref="TransverseWrapper" overflow-x-scroll flex flex-nowrap h-full pt-16 md:pt-9 md:pb-9 md:pl-5 md:pr-5 md:h-full @wheel="wheel">
+      <div id="HContainer" ref="TransverseWrapper" overflow-x-scroll flex flex-nowrap h-full pt-16 md:pt-9 md:pb-9 md:pl-5 md:pr-5 md:h-full @wheel="wheel">
         <img class="pic" src="https://s1.vika.cn/space/2022/10/27/ad3faf323fd4485cb6fd1e2e42792e29?attname=T_1.webp" alt="">
-        <img class="pic" src="https://s1.vika.cn/space/2022/10/27/125351ac55ae42e386805e902a3031f8?attname=T_2.webp" alt="">
+        <img class="pic2" src="https://s1.vika.cn/space/2022/10/27/125351ac55ae42e386805e902a3031f8?attname=T_2.webp" alt="">
         <img class="pic" src="https://s1.vika.cn/space/2022/10/27/2d791558f6e14965a7cb6410bbba5130?attname=T_19.webp" alt="">
         <img class="pic" src="https://s1.vika.cn/space/2022/10/27/945a6c76f91b4c38861ce9925e77fd1c?attname=T_24.webp" alt="">
         <img class="pic" src="https://s1.vika.cn/space/2022/10/27/db17c2f40aae43c8a2fbbb138004f179?attname=T_4.webp" alt="">

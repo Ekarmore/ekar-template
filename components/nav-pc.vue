@@ -1,33 +1,48 @@
+<script setup lang="ts">
+const navList = ref([
+  {
+    id: 1,
+    to: 'Unnoticed',
+    content: 'Unnoticed (Ongoing)',
+  },
+  {
+    id: 2,
+    to: 'Turpan',
+    content: 'Turpan',
+  },
+  {
+    id: 3,
+    to: 'AnotherLandscape',
+    content: 'Another Landscape (Ongoing)',
+  },
+  {
+    id: 4,
+    to: 'neverknowhowmuchiloveyou',
+    content: 'Never Know how much i love you (Ongoing)',
+  },
+  {
+    id: 5,
+    to: 'About',
+    content: 'About',
+  },
+])
+</script>
+
 <template>
   <section class="nav-pc" w-80 hidden md:float-left md:h-screen md:flex md:flex-col>
-    <h1 class="nav-pc-title">
+    <h1 class="pl-10 pt-10 blur-0 hover:blur-lg duration-300 ease-in-out text-xl mb-5 mt-5 font-mono">
       <NuxtLink to="/">
         Ekar
       </NuxtLink>
     </h1>
-    <hr class="nav-hr">
+    <hr class="mb-5 w-10/12 mx-auto border-black">
     <div class="nav-pc-textbox" flex flex-col mt-5 pr-6 pl-6>
-      <span class="nav-text-special">
+      <span v-for="navItem in navList" :key="navItem.id" class="flex  text-sm  font-mono m-2 hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
         <div class="special-line">-</div>
-        <NuxtLink active-class="active" to="Unnoticed">Unnoticed (Ongoing)</NuxtLink>
-      </span>
-      <span class="nav-text-special">
-        <div class="special-line">-</div>
-        <NuxtLink active-class="active" to="Turpan">Turpan</NuxtLink>
-      </span>
-      <span class="nav-text-special">
-        <div class="special-line">-</div>
-        <NuxtLink active-class="active" to="AnotherLandscape">Another Landscape (Ongoing)</NuxtLink>
-      </span>
-      <span class="nav-text-special">
-        <div class="special-line">-</div><NuxtLink active-class="active" to="neverknowhowmuchiloveyou"> Never Know how much i love you (Ongoing)</NuxtLink>
-      </span>
-      <span class="nav-text-special">
-        <div class="special-line">-</div>
-        <NuxtLink active-class="active" to="about">About</NuxtLink>
+        <NuxtLink active-class="text-black" :to="navItem.to">{{ navItem.content }}</NuxtLink>
       </span>
     </div>
-    <footer class="nav-footer">
+    <footer class="text-xs font-mono xl:opacity-70 absolute bottom-8 left-8">
       Design and create by <a class="footer-link" href="">Ekar</a> in 2022
     </footer>
   </section>

@@ -26,7 +26,7 @@ const touchMove = (event: any) => {
 </script>
 
 <template>
-  <section class="nav-mobile">
+  <section class="hidden">
     <div class="nav-mobile-bar">
       <span class="nav-mobile-title" @click="closeModal"><NuxtLink to="/">Ekar</NuxtLink></span>
       <span class="nav-icon" @click="handleModal">
