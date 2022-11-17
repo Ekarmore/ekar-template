@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import { gsap } from 'gsap'
+onMounted(() => {
+  gsap.from('#navPC', {
+    autoAlpha: 0,
+    translateX: -100,
+    duration: 0.7,
+    ease: 'power1',
+  })
+})
 const navList = ref([
   {
     id: 1,
@@ -29,16 +38,15 @@ const navList = ref([
 </script>
 
 <template>
-  <section class=" w-80 hidden md:float-left md:h-screen md:flex md:flex-col">
-    <h1 class="pl-10 pt-10 blur-0 hover:blur-lg duration-300 ease-in-out text-2xl mb-5 mt-5 font-serif">
+  <section id="navPC" class=" w-80 hidden md:float-left md:h-screen md:flex md:flex-col">
+    <h1 id="nav-title" class="pl-10 pt-10 blur-0  text-2xl mb-5 mt-5 font-serif">
       <NuxtLink to="/">
         Ekar
       </NuxtLink>
     </h1>
     <hr class="mb-5 w-10/12 mx-auto border-black">
-    <div class="nav-pc-textbox" flex flex-col mt-5 pr-6 pl-6>
-      <span v-for="navItem in navList" :key="navItem.id" class="flex font-sans text-sm m-2 hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
-        <div class="special-line">-</div>
+    <div class="nav-pc-textbox" flex flex-col mt-5 pr-6 pl-10>
+      <span v-for="navItem in navList" :key="navItem.id" class="flex font-serif  text-sm mt-2 mb-2 hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
         <NuxtLink active-class="text-black" :to="navItem.to">{{ navItem.content }}</NuxtLink>
       </span>
     </div>

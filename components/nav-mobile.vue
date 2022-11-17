@@ -64,7 +64,7 @@ const touchMove = (event: any) => {
     <transition name="fade">
       <div v-show="showModal" ref="mobileModal" :style="{ height: newVh }" class="absolute top-0 bg-white w-full z-10 " @touchmove="touchMove">
         <div class="flex flex-col items-center mt-24" @click="closeModal">
-          <span v-for="navItem in navList" :key="navItem.id" class="flex font-sans text-sm m-2 hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
+          <span v-for="navItem in navList" :key="navItem.id" class="flex text-sm m-2 hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
             <div class="special-line">-</div>
             <NuxtLink active-class="text-black" :to="navItem.to">{{ navItem.content }}</NuxtLink>
           </span>
