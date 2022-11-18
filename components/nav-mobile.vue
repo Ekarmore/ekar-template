@@ -53,7 +53,7 @@ const touchMove = (event: any) => {
 
 <template>
   <section class="w-full md:hidden z-50">
-    <div class="bg-white absolute flex justify-between z-50 items-center h-16 w-full">
+    <div class="bg-white absolute flex justify-between z-50 items-center drop-shadow-sm h-16 w-full">
       <span class="ml-5 text-xl font-serif" @click="closeModal"><NuxtLink to="/">Ekar</NuxtLink></span>
       <span class="relative h-5 w-7 mr-5" @click="handleModal">
         <span :class="[changeMenu ? openL1 : closeL1]" />

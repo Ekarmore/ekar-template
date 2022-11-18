@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
+const tl = gsap.timeline()
 onMounted(() => {
-  gsap.from('#navPC', {
+  tl.from('#navPC', {
     autoAlpha: 0,
     translateX: -100,
     duration: 0.7,

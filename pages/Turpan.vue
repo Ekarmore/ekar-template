@@ -1,7 +1,6 @@
 <script setup>
 import { gsap } from 'gsap'
 import scrollTrigger from 'gsap/ScrollTrigger'
-import src from 'gsap/src'
 const imgList = ref([
   {
     id: 1,
@@ -82,15 +81,14 @@ const { TransverseWrapper, wheel } = useXScroll()
 const compl = () => {
   window.console.log('触发')
 }
-
-// const newVh = ref('')
+const newVh = ref('')
 onMounted(() => {
   const img = ref(document.querySelectorAll('.pic'))
   img.value.forEach((img) => {
     gsap.from(img, {
-      autoAlpha: 0.3,
-      filter: 'blur(16px)',
-      // ease: 'power1',
+      autoAlpha: 0,
+      // filter: 'blur(16px)',
+      ease: 'power1',
       scrollTrigger: {
         scroller: '#HContainer',
         horizontal: true,
@@ -105,26 +103,49 @@ onMounted(() => {
       // onComplete: () => { console.log(img) },
     })
   })
+
+  // img.value.forEach((img) => {
+  //   gsap.from(img, {
+  //     autoAlpha: 0,
+  //     ease: 'power1',
+  //     scrollTrigger: {
+  //       scroller: '#HContainer',
+  //       trigger: img,
+  //       start: 'top 50%',
+  //       // toggleActions: 'play none none reverse',
+  //       // markers: true,
+  //     },
+  //     translateY: 10,
+  //     duration: 0.5,
+  //     // delay: 0.1,
+  //     // onComplete: () => { console.log(img) },
+  //   })
+  // })
 })
 
-// onMounted(() => {
-//   newVh.value = `${window.innerHeight}px`
-// })
+onMounted(() => {
+  newVh.value = `${window.innerHeight}px`
+})
 </script>
 
 <template>
   <div>
     <!-- <section v-show="a && a1 && a2 && a3"> -->
-    <section class="h-screen">
+    <section :style="{ height: newVh }">
       <div id="HContainer" ref="TransverseWrapper" class="overflow-x-scroll flex flex-nowrap items-center pt-16 md:pt-9 md:pb-9 md:pl-5 md:pr-5 h-full" @wheel="wheel">
         <img v-for="img in imgList" :key="img.id" class="pic" :src="img.srcUrl" alt="img">
       </div>
     </section>
+    <!-- <section flex items-center justify-center h-screen>
+      <div id="HContainer" class="overflow-y-scroll pt-16 md:pt-9 md:pb-9 md:pl-5 md:pr-5 flex w-max-min flex-wrap justify-center h-160">
+        <img v-for="img in imgList" :key="img.id" class="pic" :src="img.srcUrl" alt="img">
+      </div>
+    </section> -->
   </div>
 </template>
 
 <style>
 .pic {
---at-apply:"h-160 w-auto mr-5 max-w-max"
+--at-apply:"h-140 md:h-160 w-auto m-3  max-w-max "
 }
 </style>
