@@ -18,4 +18,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['gsap'],
   },
+  routeRules: {
+    // '/': { ssr: false },
+  },
 })
