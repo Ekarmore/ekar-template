@@ -202,7 +202,6 @@ onMounted(() => {
 
 <template>
   <div>
-    <!-- <section v-show="a && a1 && a2 && a3"> -->
     <section :style="{ height: newVh }">
       <div id="HContainer" ref="TransverseWrapper" class="overflow-x-scroll flex flex-nowrap items-center pt-16 md:pt-9 md:pb-9 md:pl-5 md:pr-5 h-full" @wheel="wheel">
         <img v-for="img in imgList" ref="imgs" :key="img.id" class="pic" :src="img.srcUrl" alt="img">
