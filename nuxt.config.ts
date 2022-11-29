@@ -19,6 +19,10 @@ export default defineNuxtConfig({
     transpile: ['gsap'],
   },
   routeRules: {
-    // '/': { ssr: false },
+    '/': { ssr: false },
+    '/About': { ssr: false },
+    '/Unnoticed': { ssr: false },
+    '/AnotherLandscape': { ssr: false },
+    '/NeverKnowhowmuchiloveyou': { ssr: false },
   },
 })

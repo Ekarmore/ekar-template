@@ -1,9 +1,9 @@
 <template>
   <main>
     <!-- nav-pc -->
-    <Nav-pc />
+    <Navpc />
     <!-- nav-mobile -->
-    <Nav-mobile />
+    <Navmobile />
   </main>
 </template>
 
