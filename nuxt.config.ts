@@ -18,11 +18,11 @@ export default defineNuxtConfig({
   build: {
     transpile: ['gsap'],
   },
-  routeRules: {
-    '/': { ssr: false },
-    '/About': { ssr: false },
-    '/Unnoticed': { ssr: false },
-    '/AnotherLandscape': { ssr: false },
-    '/NeverKnowhowmuchiloveyou': { ssr: false },
-  },
+  // routeRules: {
+  //   '/': { ssr: false },
+  //   '/About': { ssr: false },
+  //   '/Unnoticed': { ssr: false },
+  //   '/AnotherLandscape': { ssr: false },
+  //   '/NeverKnowhowmuchiloveyou': { ssr: false },
+  // },
 })

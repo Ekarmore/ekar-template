@@ -76,8 +76,9 @@ const List = ref([
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/7af45e21f24844968c2d6d9ab5f774ca?attname=T_6.webp',
   },
 ])
-const newVh = ref(`${window.innerHeight}px`)
-
+onMounted(() => {
+  const newVh = ref(`${window.innerHeight}px`)
+})
 const Next = () => {
   imgShow.value = false
   setTimeout(() => {
@@ -87,7 +88,6 @@ const Next = () => {
       item.value = 0
   }, 200)
 }
-
 const Prev = () => {
   imgShow.value = false
   setTimeout(() => {
@@ -106,7 +106,7 @@ const imgLoad = () => {
 </script>
 
 <template>
-  <section class=" flex flex-wrap justify-center items-center" :style="{ height: newVh }">
+  <section class=" flex flex-wrap justify-center items-center">
     <div class="items-center flex">
       <transition name="imgAnimate">
         <img v-show="imgShow" id="imgs" class="max-h-md md:max-h-xl 2xl:max-h-2xl max-w-full p-2" :src="List[item].srcUrl" alt="" @load="imgLoad" @click="Next">

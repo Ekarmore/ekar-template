@@ -15,7 +15,7 @@ const changeMenu = ref(false)
 const [openL1, openL2, openL3] = [ref('openL1'), ref('openL2'), ref('openL3')]
 const [closeL1, closeL2, closeL3] = [ref('closeL1'), ref('closeL2'), ref('closeL3')]
 const [line1, line2, line3] = [ref('line1'), ref('line2'), ref('line3')]
-const newVh = ref(`${window.innerHeight}px`)
+// const newVh = ref(`${window.innerHeight}px`)
 const navList = ref([
   { item: 1, to: 'Unnoticed', name: 'Unnoticed (Ongoing)' },
   { item: 2, to: 'Turpan', name: 'Turpan' },
