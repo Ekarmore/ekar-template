@@ -1,6 +1,7 @@
 <template>
   <main>
-    <Nav />
+    <Navpc />
+    <Navmobile />
     <slot />
   </main>
 </template>

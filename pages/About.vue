@@ -1,13 +1,3 @@
-<script setup>
-import { defineEmits, watchEffect } from 'vue'
-
-const emit = defineEmits(['isShowNav'])
-
-watchEffect(() => {
-  emit('isShowNav', true)
-})
-</script>
-
 <template>
   <main class="md:pt-24 pt-24 mx-auto md:ml-80 lg:ml-96 xl:ml-80 w-4/5 lg:w-3/5 md:w-1/2">
     <article class="mx-auto w-full md:w-10/12 xl:w-8/12">
@@ -18,7 +8,7 @@ watchEffect(() => {
         photographer from somewhere on earth
       </p>
       <p class="about-content">
-        Here are some photos I took, I hope you like it<br>
+        Here are some photos I took,hope u like it<br>
       </p>
       <p class="about-content">
         maybe you should know me better from the photos here.
