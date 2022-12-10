@@ -20,7 +20,6 @@ const dynamicList = computed(() => {
   if (routerInfo.currentRoute.value.fullPath === '/NeverKnowhowmuchiloveyou')
     return neverKnowList.value
 })
-
 const pageCurrent = (cur) => {
   item.value = cur
 }

@@ -1,5 +1,9 @@
 <script setup>
-import images from '../components/images.vue'
+useHead(
+  {
+    title: 'Another Landscape | ekar',
+  },
+)
 </script>
 
 <template>

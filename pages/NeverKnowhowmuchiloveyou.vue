@@ -1,7 +1,7 @@
 <script setup>
 useHead(
   {
-    title: 'Unnoticed | ekar',
+    title: 'Never Know how much i love you | ekar',
   },
 )
 </script>
