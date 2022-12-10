@@ -1,6 +1,4 @@
 <script setup>
-import { useMouse } from '@vueuse/core'
-import { onMounted, ref, watchEffect } from 'vue'
 const cursor = ref(null)
 const { x, y } = useMouse()
 onMounted(() => {

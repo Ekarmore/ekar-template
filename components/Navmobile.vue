@@ -1,5 +1,4 @@
 <script setup>
-import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 const tl = gsap.timeline()
 onMounted(() => {
@@ -11,7 +10,6 @@ onMounted(() => {
   })
 })
 const showModal = ref(false)
-const changeMenu = ref(false)
 const [openL1, openL2, openL3] = [ref('openL1'), ref('openL2'), ref('openL3')]
 const [closeL1, closeL2, closeL3] = [ref('closeL1'), ref('closeL2'), ref('closeL3')]
 const [line1, line2, line3] = [ref('line1'), ref('line2'), ref('line3')]
@@ -25,12 +23,10 @@ const navList = ref([
 ])
 const handleModal = () => {
   showModal.value = !showModal.value
-  changeMenu.value = !changeMenu.value
 }
 // 唤起或关闭Modal
 const closeModal = () => {
   showModal.value = false
-  changeMenu.value = false
 }
 // Modal框不可以拖动
 const touchMove = (event) => {
@@ -39,25 +35,22 @@ const touchMove = (event) => {
 </script>
 
 <template>
-  <!-- nav-mobile -->
   <section class="nav-mobile">
     <div bg-white absolute flex justify-between z-50 items-center h-16 w-full>
-      <span class="linkFont" ml-5 font-serif @click="closeModal"><router-link to="/">ekar</router-link></span>
+      <span class="linkFont" ml-5 font-serif @click="closeModal"><nuxt-link to="/">ekar</nuxt-link></span>
       <span class="nav-icon" @click="handleModal">
-        <span :class="[changeMenu ? openL1 : closeL1, line1]" />
-        <span :class="[changeMenu ? openL2 : closeL2, line2]" />
-        <span :class="[changeMenu ? openL3 : closeL3, line3]" />
+        <span :class="[showModal ? openL1 : closeL1, line1]" />
+        <span :class="[showModal ? openL2 : closeL2, line2]" />
+        <span :class="[showModal ? openL3 : closeL3, line3]" />
       </span>
     </div>
     <transition name="fade">
       <div v-show="showModal" ref="mobileModal" :style="{ height: newVh }" class="nav-mobile-modal" @touchmove="touchMove">
         <div class="modal-text-container" @click="closeModal">
           <span v-for="navItem in navList" :key="navItem.item" flex text-sm font-serif m-2 text-gray-400>
-            <router-link active-class="active" :to="navItem.to">{{ navItem.name }}</router-link>
+            <nuxt-link active-class="active" :to="navItem.to">{{ navItem.name }}</nuxt-link>
           </span>
-          <footer text-xs font-serif op50 absolute bottom-5>
-            Design and create by <a href="">ekar</a> in 2022
-          </footer>
+          <Footer />
         </div>
       </div>
     </transition>

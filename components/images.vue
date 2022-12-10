@@ -1,7 +1,4 @@
 <script setup>
-import { computed } from '@vue/reactivity'
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 import { anotherLandscapeList, neverKnowList, turpanList, unnoticedList } from '../utils/imgList'
 import toggleImg from '../components/ToggleImg.vue'
 import { newVh } from '../utils/fixHeight'
