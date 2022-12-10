@@ -5,12 +5,12 @@ import { useRouter } from 'vue-router'
 import { anotherLandscapeList, neverKnowList, turpanList, unnoticedList } from '../utils/imgList'
 import toggleImg from '../components/ToggleImg.vue'
 import { newVh } from '../utils/fixHeight'
-const imgShow = ref(false)
+const imgShow = ref(true)
 const item = ref(0)
 const routerInfo = useRouter()
 const dynamicList = computed(() => {
   if (routerInfo.currentRoute.value.fullPath === '/')
-    return unnoticedList.value
+    return turpanList.value
   if (routerInfo.currentRoute.value.fullPath === '/Turpan')
     return turpanList.value
   if (routerInfo.currentRoute.value.fullPath === '/Unnoticed')
@@ -46,16 +46,11 @@ const nextImg = () => {
 <template>
   <section class="flex flex-wrap justify-center items-center" :style="{ height: newVh }">
     <div class="flex items-center">
-      <!-- <transition name="imgAnimate">
+      <transition name="imgAnimate">
         <img v-show="imgShow" class="max-h-md md:max-h-xl 2xl:max-h-2xl max-w-full p-2" :src="dynamicList[item].srcUrl" alt="" @click="nextImg" @load="imgLoad">
-      </transition> -->
+      </transition>
       <!-- <transition name="imgAnimate">
         <nuxt-img :src="dynamicList[item].srcUrl" />
-      </transition> -->
-      <!-- <transition name="imgAnimate">
-        <div v-show="!imgShow" class="absolute h-full w-full">
-          Loading...
-        </div>
       </transition> -->
     </div>
     <toggleImg
