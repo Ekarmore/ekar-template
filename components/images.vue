@@ -1,4 +1,5 @@
 <script setup>
+import { gsap } from 'gsap'
 import { anotherLandscapeList, neverKnowList, turpanList, unnoticedList } from '../utils/imgList'
 import toggleImg from '../components/ToggleImg.vue'
 import { newVh } from '../utils/fixHeight'
@@ -40,14 +41,11 @@ const nextImg = () => {
 </script>
 
 <template>
-  <section class="flex flex-wrap justify-center items-center" :style="{ height: newVh }">
+  <section id="img-wrapper" class="flex flex-wrap justify-center items-center" :style="{ height: newVh }">
     <div class="flex items-center">
       <transition name="imgAnimate">
         <img v-show="imgShow" class="max-h-md md:max-h-xl 2xl:max-h-2xl max-w-full p-2" :src="dynamicList[item].srcUrl" alt="" @click="nextImg" @load="imgLoad">
       </transition>
-      <!-- <transition name="imgAnimate">
-        <nuxt-img :src="dynamicList[item].srcUrl" />
-      </transition> -->
     </div>
     <toggleImg
       :info="dynamicList"

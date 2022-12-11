@@ -37,7 +37,7 @@ const touchMove = (event) => {
 <template>
   <section class="nav-mobile">
     <div bg-white absolute flex justify-between z-50 items-center h-16 w-full>
-      <span class="linkFont" ml-5 font-serif @click="closeModal"><nuxt-link to="/">ekar</nuxt-link></span>
+      <span class="linkFont" ml-5 font-serif @click="closeModal"><NuxtLink to="/">ekar</NuxtLink></span>
       <span class="nav-icon" @click="handleModal">
         <span :class="[showModal ? openL1 : closeL1, line1]" />
         <span :class="[showModal ? openL2 : closeL2, line2]" />
@@ -48,7 +48,7 @@ const touchMove = (event) => {
       <div v-show="showModal" ref="mobileModal" :style="{ height: newVh }" class="nav-mobile-modal" @touchmove="touchMove">
         <div class="modal-text-container" @click="closeModal">
           <span v-for="navItem in navList" :key="navItem.item" flex text-sm font-serif m-2 text-gray-400>
-            <nuxt-link active-class="active" :to="navItem.to">{{ navItem.name }}</nuxt-link>
+            <NuxtLink active-class="active" :to="navItem.to">{{ navItem.name }}</NuxtLink>
           </span>
           <Footer />
         </div>

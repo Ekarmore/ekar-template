@@ -21,16 +21,16 @@ const navList = ref([
 <template>
   <section class="nav-pc" w-82 hidden md:float-left md:h-screen md:flex md:flex-col>
     <h1 pl-14 text-xl pt-10 mt-15>
-      <nuxt-link class="linkFont" to="/">
+      <NuxtLink class="linkFont" to="/">
         ekar
-      </nuxt-link>
+      </NuxtLink>
     </h1>
     <div id="nav-pc-textbox" flex flex-col mt-15 pr-6 pl-12>
       <span v-for="navItem in navList" :key="navItem.item" flex text-xs font-serif m-2 hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out>
-        <nuxt-link active-class="active" :to="navItem.to">{{ navItem.name }}</nuxt-link>
+        <NuxtLink active-class="active" :to="navItem.to">{{ navItem.name }}</NuxtLink>
       </span>
       <span class="flex text-xs font-serif mt-10 ml-2 hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
-        <nuxt-link active-class="active" to="about">About</nuxt-link>
+        <NuxtLink active-class="active" to="about">About</NuxtLink>
       </span>
     </div>
     <footer text-xs font-serif op50 absolute bottom-8 left-12>

@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: { name: 'page' },
   },
   modules: [
     '@vueuse/nuxt',
@@ -20,12 +20,5 @@ export default defineNuxtConfig({
   // },
   build: {
     transpile: ['gsap'],
-  },
-  routeRules: {
-    '/': { redirect: { to: '/Turpan' } },
-    // '/About': { ssr: false },
-    // '/Unnoticed': { ssr: false },
-    // '/AnotherLandscape': { ssr: false },
-    // '/NeverKnowhowmuchiloveyou': { ssr: false },
   },
 })
