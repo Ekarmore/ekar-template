@@ -1,4 +1,14 @@
 <script setup>
+import { gsap } from 'gsap'
+const tl = gsap.timeline()
+onMounted(() => {
+  tl.from('#about-wrapper', {
+    autoAlpha: 0,
+    translateY: 50,
+    duration: 0.7,
+    ease: 'power1',
+  })
+})
 useHead(
   {
     title: 'About | ekar',
@@ -7,7 +17,7 @@ useHead(
 </script>
 
 <template>
-  <main class="md:pt-24 pt-24 mx-auto md:ml-80 lg:ml-96 xl:ml-80 w-4/5 lg:w-3/5 md:w-1/2">
+  <main id="about-wrapper" class="md:pt-24 pt-24 mx-auto md:ml-80 lg:ml-96 xl:ml-80 w-4/5 lg:w-3/5 md:w-1/2">
     <article class="mx-auto w-full md:w-10/12 xl:w-8/12">
       <p class="aboutTitle">
         YEKMAT

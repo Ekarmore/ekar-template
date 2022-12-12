@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
-  app: {
-    pageTransition: { name: 'page' },
-  },
+  // app: {
+  //   pageTransition: { name: 'page', mode: 'out-in' },
+  // },
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
@@ -14,11 +14,15 @@ export default defineNuxtConfig({
   },
   css: [
     '@unocss/reset/tailwind.css',
+    '@/globalStyle.css',
   ],
   // colorMode: {
   //   classSuffix: '',
   // },
   build: {
     transpile: ['gsap'],
+  },
+  routeRules: {
+    '/Turpan': { ssr: false },
   },
 })

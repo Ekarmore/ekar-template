@@ -1,8 +1,15 @@
 <script setup>
 import { gsap } from 'gsap'
-import { anotherLandscapeList, neverKnowList, turpanList, unnoticedList } from '../utils/imgList'
 import toggleImg from '../components/ToggleImg.vue'
-import { newVh } from '../utils/fixHeight'
+const tl = gsap.timeline()
+onMounted(() => {
+  tl.from('#img-wrapper', {
+    autoAlpha: 0,
+    filter: 'blur-90',
+    translateY: 50,
+    duration: 0.7,
+  })
+})
 const imgShow = ref(true)
 const item = ref(0)
 const routerInfo = useRouter()

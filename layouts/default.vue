@@ -3,8 +3,9 @@
 
 <template>
   <main>
-    <Navpc />
-    <Navmobile />
+    <NavBarpc />
     <slot />
+    <NavBarmobile />
+    <cursor />
   </main>
 </template>

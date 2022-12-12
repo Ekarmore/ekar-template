@@ -1,26 +1,19 @@
 <script setup>
 import { gsap } from 'gsap'
 const tl = gsap.timeline()
+const showModal = ref(false)
+const [openL1, openL2, openL3] = [ref('openL1'), ref('openL2'), ref('openL3')]
+const [closeL1, closeL2, closeL3] = [ref('closeL1'), ref('closeL2'), ref('closeL3')]
+const [line1, line2, line3] = [ref('line1'), ref('line2'), ref('line3')]
 onMounted(() => {
-  tl.from('.nav-mobile', {
+  tl.from('#navbar-mobile', {
     autoAlpha: 0,
     translateY: -50,
     duration: 0.7,
     ease: 'power1',
   })
 })
-const showModal = ref(false)
-const [openL1, openL2, openL3] = [ref('openL1'), ref('openL2'), ref('openL3')]
-const [closeL1, closeL2, closeL3] = [ref('closeL1'), ref('closeL2'), ref('closeL3')]
-const [line1, line2, line3] = [ref('line1'), ref('line2'), ref('line3')]
-const newVh = ref('100dvh')
-const navList = ref([
-  { item: 1, to: 'Unnoticed', name: 'Unnoticed (Ongoing)' },
-  { item: 2, to: 'Turpan', name: 'Turpan' },
-  { item: 3, to: 'AnotherLandscape', name: 'Another Landscape (Ongoing)' },
-  // { item: 4, to: 'NeverKnowhowmuchiloveyou', name: ' Never Know how much i love you (Ongoing)' },
-  { item: 5, to: 'about', name: 'About' },
-])
+
 const handleModal = () => {
   showModal.value = !showModal.value
 }
@@ -35,20 +28,23 @@ const touchMove = (event) => {
 </script>
 
 <template>
-  <section class="nav-mobile">
-    <div bg-white absolute flex justify-between z-50 items-center h-16 w-full>
-      <span class="linkFont" ml-5 font-serif @click="closeModal"><NuxtLink to="/">ekar</NuxtLink></span>
-      <span class="nav-icon" @click="handleModal">
+  <section id="navbar-mobile" class="absolute top-0 w-full md:hidden z-50">
+    <div class="bg-white absolute flex justify-between z-50 items-center h-16 w-full">
+      <span class="ml-5 font-serif font-extrabold" @click="closeModal"><NuxtLink to="/">ekar</NuxtLink></span>
+      <span class="relative h-5 w-7 mr-5" @click="handleModal">
         <span :class="[showModal ? openL1 : closeL1, line1]" />
         <span :class="[showModal ? openL2 : closeL2, line2]" />
         <span :class="[showModal ? openL3 : closeL3, line3]" />
       </span>
     </div>
     <transition name="fade">
-      <div v-show="showModal" ref="mobileModal" :style="{ height: newVh }" class="nav-mobile-modal" @touchmove="touchMove">
-        <div class="modal-text-container" @click="closeModal">
-          <span v-for="navItem in navList" :key="navItem.item" flex text-sm font-serif m-2 text-gray-400>
+      <div v-show="showModal" ref="mobileModal" :style="{ height: newVh }" class="absolute top-0 w-full bg-white" @touchmove="touchMove">
+        <div class="flex flex-col items-center mt-24" @click="closeModal">
+          <span v-for="navItem in navList" :key="navItem.item" class="flex text-sm font-serif m-2 text-gray-400">
             <NuxtLink active-class="active" :to="navItem.to">{{ navItem.name }}</NuxtLink>
+          </span>
+          <span class="flex text-xs font-serif  hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
+            <NuxtLink active-class="active" to="about">About</NuxtLink>
           </span>
           <Footer />
         </div>
@@ -61,10 +57,6 @@ const touchMove = (event) => {
 .linkFont{
 font-family:serif;
 font-weight: 600
-}
-/* icon container */
-.nav-icon{
-@apply relative h-5 w-7 mr-5;
 }
 /* icon initial */
 .line1{
@@ -95,27 +87,6 @@ font-weight: 600
 }
 .closeL3{
 @apply  transform rotate-0 top-4 ease-in-out duration-500 !important;
-}
-.nav-mobile {
-@apply absolute top-0 w-full md:hidden z-50;
-}
-.nav-mobile-bar {
-@apply bg-white absolute flex justify-between z-50 items-center h-16 w-full;
-}
-.nav-mobile-modal {
-  @apply absolute top-0 w-full bg-white ;
-}
-.modal-text-container {
-  @apply flex flex-col items-center mt-24;
-}
-.modal-text {
-  @apply  font-thin text-gray-500 text-center font-mono m-2;
-}
-.nav-mobile-title {
-  @apply ml-5 font-mono;
-}
-.nav-mobile-footer{
-@apply text-center text-xs text-gray-500 absolute bottom-5 font-mono
 }
 .fade-enter-active,
 .fade-leave-active {

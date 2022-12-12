@@ -1,5 +1,5 @@
 import { ref } from 'vue'
-export const turpanList = ref([
+export const turpanList = ref < Array<object> > ([
   {
     id: 1,
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/ad3faf323fd4485cb6fd1e2e42792e29?attname=T_1.webp',
@@ -73,7 +73,7 @@ export const turpanList = ref([
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/7af45e21f24844968c2d6d9ab5f774ca?attname=T_6.webp',
   },
 ])
-export const unnoticedList = ref([
+export const unnoticedList = ref < Array<object> >([
   {
     id: 1,
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/683cc5c0c1c64c8cb004fe10bc5d1547?attname=Un_1.webp',
@@ -127,7 +127,7 @@ export const unnoticedList = ref([
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/6c5edc261e9940a1abb149bf03e1b8c6?attname=Un_11.webp',
   },
 ])
-export const anotherLandscapeList = ref([
+export const anotherLandscapeList = ref < Array<object> >([
   {
     id: 1,
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/511d72c4df3b4ab4aacc169b05478df1?attname=AL_7.webp',
@@ -157,7 +157,7 @@ export const anotherLandscapeList = ref([
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/7f7ecdd8008f48a4bcdb16b4cbda75b8?attname=AL_5.webp',
   },
 ])
-export const neverKnowList = ref([
+export const neverKnowList = ref < Array<object> >([
   {
     id: 1,
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/ab5b28db7d2a45dc913af1fe7ffd351e?attname=Her_1.webp',
@@ -175,4 +175,4 @@ export const neverKnowList = ref([
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/7bd5dc6fbe8745fabc246e3d3a092e57?attname=Her_2.webp',
   },
 ])
-export const item = ref(0)
+export const item = ref<number>(0)

@@ -1,0 +1,16 @@
+// scrollbar
+::-webkit-scrollbar{
+display:none;
+}
+
+@-moz-document url-prefix() {
+    html,body{overflow: hidden !important;}
+}
+// Cursor
+*{
+@apply md:cursor-none
+}
+// routerLink active class
+.active{
+@apply text-black
+}
