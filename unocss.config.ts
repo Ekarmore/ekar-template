@@ -30,6 +30,7 @@ export default defineConfig({
     }),
   ],
   transformers: [
+    // { enforce: 'pre' }
     transformerDirectives(),
     transformerVariantGroup(),
   ],

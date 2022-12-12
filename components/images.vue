@@ -65,13 +65,5 @@ const nextImg = () => {
 </template>
 
 <style>
-.imgAnimate-enter-active,
-.imgAnimate-leave-active {
-  @apply opacity-100 translate-y-0 duration-700 ease-in-out;
-}
 
-.imgAnimate-enter-from,
-.imgAnimate-leave-from {
-  @apply opacity-0 translate-y-3  duration-700 ease-in-out;
-}
 </style>
