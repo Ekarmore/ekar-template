@@ -1,13 +1,6 @@
 <script setup>
-import { gsap } from 'gsap'
-const tl = gsap.timeline()
 onMounted(() => {
-  tl.from('#about-wrapper', {
-    autoAlpha: 0,
-    translateY: 50,
-    duration: 0.7,
-    ease: 'power1',
-  })
+  aboutAnimate()
 })
 useHead(
   {

@@ -1,14 +1,6 @@
 <script setup>
-import { gsap } from 'gsap'
-import toggleImg from '../components/ToggleImg.vue'
-const tl = gsap.timeline()
 onMounted(() => {
-  tl.from('#img-wrapper', {
-    autoAlpha: 0,
-    filter: 'blur-90',
-    translateY: 50,
-    duration: 0.7,
-  })
+  imagesAnimate()
 })
 const imgShow = ref(true)
 const item = ref(0)
@@ -48,7 +40,7 @@ const nextImg = () => {
 </script>
 
 <template>
-  <section id="img-wrapper" class="flex flex-wrap justify-center items-center" :style="{ height: newVh }">
+  <section id="img-wrapper" class="flex flex-wrap justify-center items-center" :style="{ height: fixVh }">
     <div class="flex items-center">
       <transition name="imgAnimate">
         <img v-show="imgShow" class="max-h-md md:max-h-xl 2xl:max-h-2xl max-w-full p-2" :src="dynamicList[item].srcUrl" alt="" @click="nextImg" @load="imgLoad">
