@@ -20,7 +20,7 @@ const closeModal = () => {
           <span v-for="navItem in navList" :key="navItem.item" class="flex text-sm font-serif m-2 text-gray-400">
             <NuxtLink active-class="active" :to="navItem.to">{{ navItem.name }}</NuxtLink>
           </span>
-          <span class="flex text-xs font-serif  hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
+          <span class="flex text-sm m-2 font-serif  hover:translate-x-1 text-gray-400 hover:text-gray-500 transition-all duration-500 ease-out">
             <NuxtLink active-class="active" to="about">About</NuxtLink>
           </span>
           <Footer />

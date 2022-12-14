@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
-const modalState = defineProps(['modalState'])
+const prop = defineProps(['modalState'])
 const emit = defineEmits(['handleMenu'])
+const modalState = ref(prop)
 const tl = gsap.timeline()
 const menuState = ref(false)
 const [openL1, openL2, openL3] = [ref('openL1'), ref('openL2'), ref('openL3')]
@@ -16,7 +17,7 @@ onMounted(() => {
   })
 })
 watch(modalState, () => {
-  if (!modalState.modalState)
+  if (!modalState.value)
     menuState.value = false
 })
 const handleModal = () => {
