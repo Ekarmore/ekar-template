@@ -1,4 +1,3 @@
-import { ref } from 'vue'
 export const turpanList = ref < Array<object> > ([
   {
     id: 1,
@@ -175,4 +174,13 @@ export const neverKnowList = ref < Array<object> >([
     srcUrl: 'https://s1.vika.cn/space/2022/10/27/7bd5dc6fbe8745fabc246e3d3a092e57?attname=Her_2.webp',
   },
 ])
+// const { data } = await useFetch('https://api.vika.cn/fusion/v1/datasheets/dstJhGWtyFuTgzT2ie/records?viewId=viwwAgd5AQPwl&fieldKey=name',
+//   {
+//     method: 'get',
+//     headers: { Authorization: 'Bearer uskK5FftsbXnLqrOV5DjzLY' },
+//   })
+
+// export const imgList = computed(() => {
+//   return data.value.data.records[0].fields.image
+// })
 export const item = ref<number>(0)
