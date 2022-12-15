@@ -1,1 +1,1 @@
-export const fixVh = ref<string>('100dvh')
+export const fixVh = ref('100dvh')

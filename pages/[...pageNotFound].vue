@@ -5,7 +5,7 @@ const route = useRoute()
 const { pageNotFound } = route.params
 useHead(
   {
-    title: `404 not found page ${pageNotFound} | ekar`,
+    title: '404 not found | ekar',
   },
 )
 </script>
