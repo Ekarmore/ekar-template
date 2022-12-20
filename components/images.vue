@@ -43,7 +43,8 @@ const nextImg = () => {
   <section id="img-wrapper" class="flex flex-wrap justify-center items-center" :style="{ height: fixVh }">
     <div class="flex items-center">
       <transition name="imgAnimate">
-        <img v-show="imgShow" class="max-h-md md:max-h-xl 2xl:max-h-2xl max-w-full p-2" :src="dynamicList[item].srcUrl" alt="" @click="nextImg" @load="imgLoad">
+        <!-- <img v-show="imgShow" class="max-h-md md:max-h-xl 2xl:max-h-2xl max-w-full p-2" :src="dynamicList[item].srcUrl" alt="" @click="nextImg" @load="imgLoad"> -->
+        <nuxt-img v-show="imgShow" class="max-h-md md:max-h-xl 2xl:max-h-2xl max-w-full p-2" :src="dynamicList[item].srcUrl" alt="" @click="nextImg" @load="imgLoad" />
       </transition>
     </div>
     <toggleImg
