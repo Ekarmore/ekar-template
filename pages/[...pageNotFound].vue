@@ -20,9 +20,9 @@ useHead(
         <span p="l2 r2 b2" class="font-serif ">
           Page:  <span class="italic font-bold border-b border-black">
             {{ pageNotFound[0] }}
-          </span> was not found
+          </span> was not found :/
         </span>
-        <span class="text-sm font-serif">Please check the path </span>
+        <span class="text-sm font-serif">Please check the path</span>
       </div>
       <span p="t0.5 b0.5 l2 r2" m="t5" text="center white sm" class="bg-black rounded font-serif select-none" @click="router.back()">
         Back
