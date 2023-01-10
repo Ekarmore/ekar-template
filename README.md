@@ -1,3 +1,3 @@
 # ekar template
-## a photography site template
+## A Photographer Personal Website Template
 ---
