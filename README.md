@@ -6,7 +6,6 @@
 <br/>
 
 ## **Feature**
----
 - [💚 Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, etc.
 
 - ⚡️ Vite - Instant HMR
@@ -28,6 +27,5 @@
 <br/>
 
 ## **Try it now**
----
 ## Github Template
 ### **[Create a repo from this template on GitHub.](https://github.com/Ekarmore/ekar-template/generate)**
