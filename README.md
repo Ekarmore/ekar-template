@@ -1,5 +1,6 @@
 ## **ekar template**
-## 📷 A Photographer Personal Website Template
+### 📷 A Photographer Personal Website Template
+<br/>
 <img src='public/EKAR.png'>
 
 ### **[Online preview](https://ekartemplate.netlify.app)**
@@ -27,5 +28,5 @@
 <br/>
 
 ## **Try it now**
-## Github Template
+### Github Template
 ### **[Create a repo from this template on GitHub.](https://github.com/Ekarmore/ekar-template/generate)**
